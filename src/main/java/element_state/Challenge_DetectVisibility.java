@@ -16,7 +16,16 @@ public class Challenge_DetectVisibility extends Main {
      * if the element is visible, click it
      * if the element is not visible, print “box is not visible”
      */
+    WebElement box = driver.findElement(By.id("box"));
+    if(box.isDisplayed())
+    {
+      box.click();
 
-    driver.quit();
+    }
+    else{
+      System.out.println("Box is not visible");
+    }
+
+    //driver.quit();
   }
 }
