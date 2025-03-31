@@ -10,5 +10,37 @@ public class LoginPage {
   private final By passwordField = By.id("password-field");
   private final By loginButton = By.id("login-form-submit");
 
+  private WebDriver driver;
+
+  public LoginPage(WebDriver driver)
+  {
+    this.driver = driver;
+  }
   
+  public void setUsername(String username)
+  {
+    driver.findElement(usernameField.sendKeys(username));
+  }
+
+  public void setPassword(String password)
+  {
+   driver.findElement(passwordField.sendKeys(password));
+  }
+  }
+
+  public String clickLoginButton()
+  {
+    driver.findElement(loginButton).click();
+    Alert alert = driver.switchTo().alert();
+    String message = alert.getText();
+    alert.accept();
+    return message;
+  }
+
+  public String login(String username, String password)
+  {
+    setUsername(username);
+    setPassword(password);
+    return clickLoginButton();
+  }
 }
