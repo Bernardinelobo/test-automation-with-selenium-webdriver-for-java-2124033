@@ -11,7 +11,7 @@ public class BaseTests {
   protected static WebDriver driver;
 
   @BeforeAll
-    public static void setUp(
+    public static void setUp()
     {
       chromedriver().setup();
       ChromeOptions options = new ChromeOptions();
@@ -24,6 +24,4 @@ public class BaseTests {
     public static void tearDown(){
       driver.quit();
     }
-  )
-
-}
+  }
