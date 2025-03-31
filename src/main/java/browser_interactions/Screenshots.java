@@ -14,10 +14,12 @@ public class Screenshots extends Main {
 
   public static void main(String[] args) {
     driver.get("https://www.selenium.dev/selenium/web/web-form.html");
+    var browsingcontext = new BrowsingContext(driver,driver.getWindowHandle());
 
     
 
     // FULL PAGE
+    String fullSCreenshot = new browsingcontext.captureScreenshot();
     
 
     // ELEMENT
